@@ -1,70 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BikeZone</title>
-        <style>
-            header{
-                background-color: #ACC8E5;
-                color: #000000;
-                text-align: center;
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 16px;
-                border: 5px solid gray;
-            }
-            main {
-                background-color: #F7F2D4;
-                color: #000000;
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 16px;
-                border: 5px solid gray;
-                display: flex;
-            }
-            img{
-                width: 80px;
-                height: 80px;
-            }
-            .artigo-autor {
-                font-weight: bold;
-            }
 
-            
-        </style>
-    </head>
-    <body>
-        <header>
+<head <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeZone</title>
+    <style>
+        header {
+            background-color: #ACC8E5;
+            color: #000000;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 5px solid gray;
+        }
+
+        main {
+            background-color: #F7F2D4;
+            color: #000000;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 5px solid gray;
+            display: flex;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
         <h1> Meu blog bikes</h1>
         <p> Vou compartilhar conhecimentos sobre peças de bikes e bikes</p>
-        </header>
-        <main>
-        <img src="Gemini_Generated_Image_.png" alt="Ilustração digital em estilo de logotipo com a palavra BIKEZONE em destaque no topo, escrita em letras maiúsculas na cor bege com contorno azul-escuro. Dentro de uma moldura arredondada abaixo do texto, destaca-se uma bicicleta de montanha na cor preta, vista de perfil. O fundo traz a silhueta simplificada de prédios urbanos em tons de azul, e toda a composição está inserida em um fundo geral bege claro.">
-        <div>
-            <h2>Meu primeiro post</h2>
-            <p class="artigo-autor">Por: Vitor Fontes Landin</p>
-            <p> Boas-vindas ao meu novo blog! Aqui vou compartilhar meus conhecimentos sobre o mundo das bikes.</p>
-            <button>❤️<span>0</span>​</button>
-            <button>👍​<span>0</span>​</button>
-        </div>
-
-
-       </main>
-    </body>
+    </header>
+    <main>
+        <article>
+            <img src="Gemini_Generated_Image_.png"
+                alt="Ilustração digital em estilo de logotipo com a palavra BIKEZONE em destaque no topo, escrita em letras maiúsculas na cor bege com contorno azul-escuro. Dentro de uma moldura arredondada abaixo do texto, destaca-se uma bicicleta de montanha na cor preta, vista de perfil. O fundo traz a silhueta simplificada de prédios urbanos em tons de azul, e toda a composição está inserida em um fundo geral bege claro.">
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Vitor Fontes Landin</p>
+                <p> Boas-vindas ao meu novo blog! Aqui vou compartilhar meus conhecimentos sobre o mundo das bikes.</p>
+                <button>❤️<span>0</span>​</button>
+                <button>👍​<span>0</span>​</button>
+            </div>
+        </article>
+        <article>
+            <img src="Gemini_Generated_Image_.png"
+                alt="Ilustração digital em estilo de logotipo com a palavra BIKEZONE em destaque no topo, escrita em letras maiúsculas na cor bege com contorno azul-escuro. Dentro de uma moldura arredondada abaixo do texto, destaca-se uma bicicleta de montanha na cor preta, vista de perfil. O fundo traz a silhueta simplificada de prédios urbanos em tons de azul, e toda a composição está inserida em um fundo geral bege claro.">
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Vitor Fontes Landin</p>
+                <p> Boas-vindas ao meu novo blog! Aqui vou compartilhar meus conhecimentos sobre o mundo das bikes.</p>
+                <button>❤️<span>0</span>​</button>
+                <button>👍​<span>0</span>​</button>
+            </div>
+        </article>
+    </main>
+</body>
 <script>
     const botoes = document.querySelector("button");
 
-   botoes.forEach(function(botao) {
-botao.addEventListener("click", botaoClicado);
+    botoes.forEach(function (botao) {
+        botao.addEventListener("click", botaoClicado);
 
-function botaoClicado() {
-console.log("fui clicado");
-let texto = botao.querySelector("span");
-texto.textContent++;
-}
-})
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            texto.textContent++;
+        }
+    })
 
 
 </script>
+
 </html>
