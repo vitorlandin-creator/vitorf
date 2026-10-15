@@ -1,239 +1,467 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BikeZone</title>
+
     <style>
+        :root {
+            --cor-primaria: #ACC8E5;
+            --cor-secundaria: #000000;
+            --cor-contraste: #ffffff;
+            --cor-fundo: #F7F2D4;
+            --cor-artigo: #fffdf0;
+            --fonte-texto: Arial, sans-serif;
+        }
+
+        .tema-escuro {
+            --cor-primaria: #26384a;
+            --cor-secundaria: #f1f1f1;
+            --cor-contraste: #ffffff;
+            --cor-fundo: #181818;
+            --cor-artigo: #292929;
+            --fonte-texto: Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: white;
+            background-color: var(--cor-fundo);
+            color: var(--cor-secundaria);
+            font-family: var(--fonte-texto);
+            max-width: 100vw;
             margin: 0;
             padding: 20px 0;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
-            background-color: #ACC8E5;
-            color: #000000;
+            background-color: var(--cor-primaria);
+            color: var(--cor-secundaria);
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px 16px;
             border: 5px solid gray;
             border-radius: 12px 12px 0 0;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header p {
-            color: #000000;
+            color: var(--cor-secundaria);
         }
 
         main {
-            background-color: #F7F2D4;
-            color: #000000;
+            background-color: var(--cor-fundo);
+            color: var(--cor-secundaria);
             max-width: 800px;
             margin: 0 auto;
             padding: 16px;
             border: 5px solid gray;
             border-top: none;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         article {
             display: flex;
+            align-items: flex-start;
             gap: 18px;
-            background-color: #fffdf0;
+            background-color: var(--cor-artigo);
+            color: var(--cor-secundaria);
             margin-bottom: 18px;
             padding: 18px;
             border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        article h2 {
-            color: #000000;
+        article h2,
+        article h3,
+        article p {
+            color: var(--cor-secundaria);
+        }
+
+        article p {
+            line-height: 1.6;
         }
 
         img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             object-fit: cover;
-
+            border-radius: 8px;
         }
 
         .artigo-autor {
             font-weight: bold;
-            color: #000000;
+            color: var(--cor-secundaria);
         }
 
         button {
-            background-color: #ACC8E5;
+            background-color: var(--cor-primaria);
+            color: var(--cor-secundaria);
             border: 2px solid gray;
             border-radius: 8px;
             padding: 7px 12px;
             cursor: pointer;
             font-size: 15px;
+            margin: 4px 2px;
         }
 
         button:hover {
-            background-color: #91b5d8;
+            opacity: 0.8;
+        }
+
+        .botao-tema {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #3b647e;
+            border-radius: 50%;
+            background-color: #073b59;
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .botao-tema:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        @media (max-width: 600px) {
+            header,
+            main {
+                width: auto;
+                margin: 0 10px;
+            }
+
+            article {
+                flex-direction: column;
+            }
+
+            img {
+                width: 100%;
+                height: 180px;
+            }
+
+            .botao-tema {
+                bottom: 15px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+            }
         }
     </style>
 </head>
 
 <body>
+
     <header>
-        <h1> BIKEZONE</h1>
-        <p> Vou compartilhar conhecimentos sobre peças de bikes e bikes</p>
+        <h1>BIKEZONE</h1>
+        <p>Vou compartilhar conhecimentos sobre peças de bikes e bicicletas.</p>
     </header>
+
+    <button
+        class="botao-tema"
+        id="botao-tema"
+        type="button"
+        title="Ativar tema escuro"
+        aria-label="Ativar tema escuro">
+        🌓
+    </button>
+
     <main>
         <article>
             <img src="Gemini_Generated_Image_.png"
-                alt="Ilustração digital em estilo de logotipo com a palavra BIKEZONE em destaque no topo, escrita em letras maiúsculas na cor bege com contorno azul-escuro. Dentro de uma moldura arredondada abaixo do texto, destaca-se uma bicicleta de montanha na cor preta, vista de perfil. O fundo traz a silhueta simplificada de prédios urbanos em tons de azul, e toda a composição está inserida em um fundo geral bege claro.">
+                 alt="Logotipo BikeZone com uma bicicleta">
+
             <div>
                 <h2>Meu primeiro post</h2>
                 <p class="artigo-autor">Por: Vitor Fontes Landin</p>
-                <p> Boas-vindas ao meu novo blog! Aqui vou compartilhar meus conhecimentos sobre o mundo das bikes.</p>
-                <button>❤️<span>0</span>​</button>
-                <button>👍​<span>0</span>​</button>
+
+                <p>
+                    Boas-vindas ao meu novo blog! Aqui vou compartilhar
+                    meus conhecimentos sobre o mundo das bikes, suas peças,
+                    manutenção e cuidados necessários para pedalar com segurança.
+                </p>
+
+                <button class="botao-curtida" type="button">
+                    ❤️ <span>0</span>
+                </button>
+
+                <button class="botao-curtida" type="button">
+                    👍 <span>0</span>
+                </button>
             </div>
         </article>
+
         <article>
             <div>
                 <h2>Vamos conhecer as peças das bikes</h2>
-                <p class="artigo-autor"></p>
-                <p>
-                <h2>Você sabe para que serve cada peça da sua bicicleta?</h2>
+                <p class="artigo-autor">Conhecendo os componentes da bicicleta</p>
 
-                Uma bicicleta possui várias peças, e cada uma delas tem uma função
-                importante para que a bike funcione corretamente. Vamos conhecer
-                algumas das principais peças!
-                </p>
                 <p>
-                    <strong> Câmbio:</strong> permite trocar as marchas da bicicleta,
+                    Você sabe para que serve cada peça da sua bicicleta?
+                    Cada componente possui uma função importante para que
+                    a bike funcione corretamente.
+                </p>
+
+                <p>
+                    <strong>Câmbio:</strong> permite trocar as marchas,
                     deixando a pedalada mais fácil ou mais pesada.
                 </p>
+
                 <p>
-                    <strong> Corrente:</strong> transmite a força dos pedais para a roda
-                    traseira, fazendo a bicicleta se movimentar.
-                </p>
-                <p>
-                    <strong> Freios:</strong> servem para diminuir a velocidade e parar
-                    a bicicleta com segurança.
-                </p>
-                <p>
-                    <strong>Pedais:</strong> recebem a força dos pés e ajudam a movimentar
-                    a corrente e as rodas.
+                    <strong>Corrente:</strong> transmite a força dos pedais
+                    para a roda traseira.
                 </p>
 
-                <h3> Curiosidade</h3>
                 <p>
-                    Todas essas peças trabalham juntas. Por isso, cuidar e fazer a manutenção
-                    da bicicleta é importante para ter um pedal mais seguro e tranquilo.
+                    <strong>Freios:</strong> ajudam a diminuir a velocidade
+                    e parar a bicicleta com segurança.
                 </p>
-                <button>❤️<span>0</span>​</button>
-                <button>👍​<span>0</span>​</button>
+
+                <p>
+                    <strong>Pedais:</strong> recebem a força dos pés e ajudam
+                    a movimentar a bicicleta.
+                </p>
+
+                <h3>Curiosidade</h3>
+
+                <p>
+                    Todas essas peças trabalham juntas. Por isso, realizar
+                    a manutenção da bicicleta é essencial para um pedal seguro.
+                </p>
+
+                <button class="botao-curtida" type="button">
+                    ❤️ <span>0</span>
+                </button>
+
+                <button class="botao-curtida" type="button">
+                    👍 <span>0</span>
+                </button>
             </div>
         </article>
+
         <article>
             <div>
-                <h2>Agora vamos falar sobre a forma correta de fazer a manutenção
-                </h2>
-                <p class="artigo-autor">Por que fazer a manutenção na minha bike?</p>
-                <p> Fazer a manutenção da bicicleta é importante para mantê-la segura e funcionando corretamente.
-                    Verificar os freios, pneus, corrente, marchas e outras peças ajuda a evitar problemas durante o
-                    passeio. Além disso, a manutenção aumenta a durabilidade das peças, melhora o desempenho da
-                    bicicleta e pode evitar gastos maiores com consertos. Por isso, cuidar da sua bike regularmente é
-                    essencial para pedalar com mais segurança e tranquilidade.
+                <h2>A importância da manutenção</h2>
+                <p class="artigo-autor">Cuide bem da sua bike!</p>
+
+                <p>
+                    Fazer a manutenção da bicicleta é importante para mantê-la
+                    segura e funcionando corretamente. Verificar os freios,
+                    pneus, corrente e marchas ajuda a evitar problemas durante
+                    os passeios.
                 </p>
+
+                <p>
+                    A manutenção também aumenta a durabilidade das peças,
+                    melhora o desempenho da bicicleta e pode evitar gastos
+                    maiores com consertos.
                 </p>
-                <button>❤️<span>0</span>​</button>
-                <button>👍​<span>0</span>​</button>
+
+                <button class="botao-curtida" type="button">
+                    ❤️ <span>0</span>
+                </button>
+
+                <button class="botao-curtida" type="button">
+                    👍 <span>0</span>
+                </button>
             </div>
         </article>
+
         <article>
-            <img src="images.jpeg" alt=>
+            <img src="images02.jpeg" alt="Peças e câmbio de bicicleta">
+
             <div>
                 <h2>Cuidados com o câmbio da sua bike</h2>
-                <p class="artigo-autor">Conselhos para um bom funcionamento do câmbio da sua bike</p>
-                <p> A manutenção do câmbio é simples: limpe a corrente, o cassete e as roldanas com desengraxante e
-                    seque bem; depois, aplique uma gota de lubrificante específico em cada elo e remova o excesso com um
-                    pano; por fim, ajuste a tensão do cabo no regulador para as marchas trocarem sem barulho. Se você
-                    não fizer isso, a sujeira vira uma pasta que consome as peças rapidamente, as marchas começam a
-                    pular sozinhas e o sistema pode travar sob esforço, quebrando o câmbio e causando um acidente.
+                <p class="artigo-autor">Conselhos para o bom funcionamento</p>
+
+                <p>
+                    Para cuidar do câmbio, limpe a corrente, o cassete e as
+                    roldanas com produtos adequados. Depois, aplique lubrificante
+                    específico na corrente e retire o excesso com um pano.
                 </p>
+
+                <p>
+                    Verifique também se as marchas estão trocando corretamente.
+                    Se houver barulhos ou dificuldade nas trocas, pode ser
+                    necessário ajustar o câmbio.
                 </p>
-                <button>❤️<span>0</span>​</button>
-                <button>👍​<span>0</span>​</button>
+
+                <button class="botao-curtida" type="button">
+                    ❤️ <span>0</span>
+                </button>
+
+                <button class="botao-curtida" type="button">
+                    👍 <span>0</span>
+                </button>
             </div>
         </article>
+
         <article>
-            <img src="images1.jpeg" alt=>
+            <img src="images05.jpeg" alt="Sistema de freios de bicicleta">
+
             <div>
-                <h2>Cuidados com os freios da sua bike da sua bike</h2>
-                <p class="artigo-autor">Conselhos para um bom funcionamento dos freios da sua bike</p>
-                <p>Para cuidar dos freios da bike, inspecione e troque pastilhas finas (com menos de 1 mm) ou sapatas
-                    gastas, limpe os discos com álcool isopropílico e os aros com água e sabão neutro, e ajuste a tensão
-                    dos cabos para o manete não ficar fundo. Alinhe as pinças ou sapatas para não rasparem na roda, faça
-                    a sangria do fluido caso o freio hidráulico perca pressão, evite tocar nos discos com as mãos sujas
-                    e sempre faça um teste rápido em baixa velocidade antes de rodar.
+                <h2>Cuidados com os freios da sua bike</h2>
+                <p class="artigo-autor">Pedale com segurança</p>
+
+                <p>
+                    Verifique regularmente o estado das pastilhas ou sapatas
+                    de freio. Confira também se os cabos estão bem ajustados
+                    e se os manetes respondem corretamente.
                 </p>
+
+                <p>
+                    Mantenha os componentes limpos e faça um teste dos freios
+                    em baixa velocidade antes de sair para pedalar.
+                    Se perceber falhas, procure uma oficina especializada.
                 </p>
-                <button>❤️<span>0</span>​</button>
-                <button>👍​<span>0</span>​</button>
+
+                <button class="botao-curtida" type="button">
+                    ❤️ <span>0</span>
+                </button>
+
+                <button class="botao-curtida" type="button">
+                    👍 <span>0</span>
+                </button>
             </div>
         </article>
-         <article>
-            <img src="images04.jpeg" alt=>
+
+        <article>
+            <img src="images04.jpeg" alt="Corrente de bicicleta">
+
             <div>
                 <h2>Cuidados com a corrente da sua bike</h2>
-                <p class="artigo-autor">Conselhos para um bom funcionamento da corrente da sua bike</p>
-                <p>Para cuidar dos freios da bike, inspecione e troque pastilhas finas (com menos de 1 mm) ou sapatas
-                    gastas, limpe os discos com álcool isopropílico e os aros com água e sabão neutro, e ajuste a tensão
-                    dos cabos para o manete não ficar fundo. Alinhe as pinças ou sapatas para não rasparem na roda, faça
-                    a sangria do fluido caso o freio hidráulico perca pressão, evite tocar nos discos com as mãos sujas
-                    e sempre faça um teste rápido em baixa velocidade antes de rodar.
+                <p class="artigo-autor">Mantenha a transmissão em bom estado</p>
+
+                <p>
+                    Limpe a corrente para remover poeira e resíduos.
+                    Depois de secá-la, aplique lubrificante próprio para
+                    bicicletas e retire o excesso com um pano.
                 </p>
+
+                <p>
+                    Uma corrente limpa e lubrificada ajuda nas trocas de
+                    marchas e reduz o desgaste dos componentes da transmissão.
+                    Verifique também se ela apresenta sinais de desgaste.
                 </p>
-                <button>❤️<span>0</span>​</button>
-                <button>👍​<span>0</span>​</button>
+
+                <button class="botao-curtida" type="button">
+                    ❤️ <span>0</span>
+                </button>
+
+                <button class="botao-curtida" type="button">
+                    👍 <span>0</span>
+                </button>
             </div>
         </article>
+
         <article>
-            <img src="images02.jpeg" alt=>
+            <img src="images02.jpeg" alt="Pedais de bicicleta">
+
             <div>
                 <h2>Cuidados com os pedais da sua bike</h2>
-                <p class="artigo-autor">Conselhos para um bom funcionamento dos pedais da sua bike</p>
-                <p> A manutenção dos pedais é simples: limpe a parte externa com pano ou escova para tirar a sujeira,
-                    verifique se estão bem rosqueados no pedivela e pingue uma gota de óleo nas articulações ou encaixes
-                    do mola (caso use pedal de encaixe). Sem essa manutenção, o acúmulo de sujeira gera ruídos
-                    irritantes ao pedalar, a rosca pode emperrar ou folgar, os rolamentos internos se desgastam até
-                    travar e o pedal pode soltar ou quebrar durante a força, provocando uma queda.
+                <p class="artigo-autor">Mais conforto durante a pedalada</p>
+
+                <p>
+                    Limpe os pedais com um pano ou uma escova para remover
+                    a sujeira. Confira se estão bem fixados no pedivela
+                    e se giram sem apresentar ruídos ou folgas.
                 </p>
+
+                <p>
+                    Se perceber dificuldade de movimento, desgaste ou folga
+                    excessiva, procure uma oficina para verificar os
+                    rolamentos e a fixação dos pedais.
                 </p>
-                <button>❤️<span>0</span>​</button>
-                <button>👍​<span>0</span>​</button>
+
+                <button class="botao-curtida" type="button">
+                    ❤️ <span>0</span>
+                </button>
+
+                <button class="botao-curtida" type="button">
+                    👍 <span>0</span>
+                </button>
             </div>
         </article>
     </main>
-</body>
-<script>
-    const botoes = document.querySelectorAll("button");
 
-    botoes.forEach(function (botao) {
-        let curtiu = false;
-        botao.addEventListener("click", botaoClicado);
-        function botaoClicado() {
-            console.log("fui clicado");
-            let texto = botao.querySelector("span");
-            if (curtiu === false) {
-                texto.textContent++;
-                curtiu = true;
-            } else {
-                texto.textContent--;
-                curtiu = false;
-            }
+    <script>
+        const botoesCurtida = document.querySelectorAll(".botao-curtida");
+
+        botoesCurtida.forEach(function (botao) {
+            let curtiu = false;
+
+            botao.addEventListener("click", function () {
+                const contador = botao.querySelector("span");
+
+                if (!curtiu) {
+                    contador.textContent =
+                        Number(contador.textContent) + 1;
+
+                    curtiu = true;
+                    botao.style.borderColor = "#2e8b57";
+                } else {
+                    contador.textContent =
+                        Number(contador.textContent) - 1;
+
+                    curtiu = false;
+                    botao.style.borderColor = "gray";
+                }
+            });
+        });
+
+       
+        const botaoTema = document.getElementById("botao-tema");
+        const corpo = document.body;
+
+        const temaSalvo = localStorage.getItem("tema-bikezone");
+
+        if (temaSalvo === "escuro") {
+            corpo.classList.add("tema-escuro");
+            botaoTema.textContent = "🌗";
+            botaoTema.title = "Ativar tema claro";
+            botaoTema.setAttribute("aria-label", "Ativar tema claro");
         }
 
-    })
+        botaoTema.addEventListener("click", function () {
+            corpo.classList.toggle("tema-escuro");
 
+            const temaEscuroAtivo =
+                corpo.classList.contains("tema-escuro");
 
-</script>
+            if (temaEscuroAtivo) {
+                botaoTema.textContent = "🌗";
+                botaoTema.title = "Ativar tema claro";
+                botaoTema.setAttribute("aria-label", "Ativar tema claro");
 
+                localStorage.setItem("tema-bikezone", "escuro");
+            } else {
+                botaoTema.textContent = "🌓";
+                botaoTema.title = "Ativar tema escuro";
+                botaoTema.setAttribute("aria-label", "Ativar tema escuro");
+
+                localStorage.setItem("tema-bikezone", "claro");
+            }
+        });
+    </script>
+
+</body>
 </html>
